@@ -18,7 +18,7 @@
 	- allow adoption of a pet
 		- display the pet to adoption
 		- display the description for the adoption pet
-	- allow intake of a pet
+	- allow intake of a pet (add)
 		- allow for input of name
 		- allow for input of type
 
