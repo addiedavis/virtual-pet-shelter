@@ -40,4 +40,20 @@ public class VirtualPetShelter {
 		playBallWithPet.playBall(amount);
 	}
 
+	public void gameTick1(String petName, int down) {
+		VirtualPet petGameTick = findPet(petName);
+		petGameTick.tick(down);
+		
+	}
+
+	public void gameTick2(String petName, int down) {
+		VirtualPet petGameTick = findPet(petName);
+		petGameTick.tick2(down);
+	}
+
+	public void gameTick3(String petName, int down) {
+		VirtualPet petGameTick = findPet(petName);
+		petGameTick.tick3(down);
+	}
+
 }

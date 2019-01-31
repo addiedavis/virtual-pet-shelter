@@ -48,4 +48,54 @@ public class VirtualPet {
 		playLevel += amount;
 	}
 
+	public void tick(int down) {
+		hungerLevel -= down;
+		thirstLevel -= down;
+		playLevel -= down;
+		if (hungerLevel < 0) {
+			hungerLevel = 0;
+		}
+		if (thirstLevel < 0) {
+			thirstLevel = 0;
+		}
+		if (playLevel < 0) {
+			playLevel = 0;
+		}
+	}
+
+	public void tick2(int down) {
+		hungerLevel -= down;
+		playLevel -= down;
+		if (hungerLevel < 0) {
+			hungerLevel = 0;
+		}
+		if (thirstLevel < 0) {
+			thirstLevel = 0;
+		}
+		if (playLevel < 0) {
+			playLevel = 0;
+		}
+	}
+
+	public void tick3(int down) {
+		playLevel -= down;
+		if (hungerLevel < 0) {
+			hungerLevel = 0;
+		}
+		if (thirstLevel < 0) {
+			thirstLevel = 0;
+		}
+		if (playLevel < 0) {
+			playLevel = 0;
+		}
+	}
+
+	public boolean isAlive() {
+		if (hungerLevel > 0 && thirstLevel > 0 ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }
