@@ -36,19 +36,19 @@ public class VirtualPet {
 		this.playLevel = playLevel;
 	}
 
-	public void feedPet(int nom) {
-		hungerLevel += nom;
+	public void feedPet() {
+		hungerLevel++;
 	}
 
-	public void waterPet(int drip) {
-		thirstLevel += drip;
+	public void waterPet() {
+		thirstLevel++;
 	}
 
 	public void playBall(int amount) {
 		playLevel += amount;
 	}
 
-	public void tick(int down) {
+	public void allTick(int down) {
 		hungerLevel -= down;
 		thirstLevel -= down;
 		playLevel -= down;
@@ -63,39 +63,24 @@ public class VirtualPet {
 		}
 	}
 
-	public void tick2(int down) {
+	public void healthTick(int down) {
 		hungerLevel -= down;
-		playLevel -= down;
+		thirstLevel -= down;
 		if (hungerLevel < 0) {
 			hungerLevel = 0;
 		}
 		if (thirstLevel < 0) {
 			thirstLevel = 0;
 		}
-		if (playLevel < 0) {
-			playLevel = 0;
-		}
 	}
 
-	public void tick3(int down) {
+	public void happyTick(int down) {
 		playLevel -= down;
-		if (hungerLevel < 0) {
-			hungerLevel = 0;
-		}
-		if (thirstLevel < 0) {
-			thirstLevel = 0;
-		}
 		if (playLevel < 0) {
 			playLevel = 0;
 		}
 	}
 
-	public boolean isAlive() {
-		if (hungerLevel > 0 && thirstLevel > 0 ) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+
 
 }
