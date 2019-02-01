@@ -74,7 +74,7 @@ public class VirtualPetShelterApp {
 
 		}
 
-		System.out.println("Thank you for playing!");
+		System.out.println("Thank you for playing! All the pets were adopted!");
 		System.exit(0);
 	}
 
