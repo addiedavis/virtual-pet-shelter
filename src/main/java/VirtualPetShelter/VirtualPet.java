@@ -48,10 +48,10 @@ public class VirtualPet {
 		playLevel += amount;
 	}
 
-	public void allTick(int down) {
-		hungerLevel -= down;
-		thirstLevel -= down;
-		playLevel -= down;
+	public void tick() {
+		hungerLevel--;
+		thirstLevel--;
+		playLevel--;
 		if (hungerLevel < 0) {
 			hungerLevel = 0;
 		}
@@ -63,23 +63,6 @@ public class VirtualPet {
 		}
 	}
 
-	public void healthTick(int down) {
-		hungerLevel -= down;
-		thirstLevel -= down;
-		if (hungerLevel < 0) {
-			hungerLevel = 0;
-		}
-		if (thirstLevel < 0) {
-			thirstLevel = 0;
-		}
-	}
-
-	public void happyTick(int down) {
-		playLevel -= down;
-		if (playLevel < 0) {
-			playLevel = 0;
-		}
-	}
 
 
 

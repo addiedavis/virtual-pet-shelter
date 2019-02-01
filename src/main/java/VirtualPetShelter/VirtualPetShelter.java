@@ -22,7 +22,7 @@ public class VirtualPetShelter {
 	}
 
 	public void adopt(VirtualPet pet) {
-		myShelter.remove(pet.getPetName(), pet);
+		myShelter.remove(pet.getPetName());
 	}
 
 	public void playWithPet(String petName, int amount) {
@@ -30,21 +30,6 @@ public class VirtualPetShelter {
 		playBallWithPet.playBall(amount);
 	}
 
-	public void allGameTick(String petName, int down) {
-		VirtualPet petGameTick = findPet(petName);
-		petGameTick.allTick(down);
-		
-	}
-
-	public void allHealthTick(String petName, int down) {
-		VirtualPet petGameTick = findPet(petName);
-		petGameTick.healthTick(down);
-	}
-
-	public void allHappyTick(String petName, int down) {
-		VirtualPet petGameTick = findPet(petName);
-		petGameTick.happyTick(down);
-	}
 
 	public boolean isEmptyShelter() {
 		return myShelter.isEmpty();
@@ -64,10 +49,16 @@ public class VirtualPetShelter {
 
 	public void showPets(VirtualPet pet) {
 		for (Entry<String, VirtualPet> pets : myShelter.entrySet()) {
-			System.out.println("Name : " + pets.getKey() + " \tType : " + pets.getValue().getType()
-					+ "\tPlay: " + pets.getValue().getPlayLevel() + "\tHunger: "
-					+ pets.getValue().getHungerLevel() + "\tThirst: " + pets.getValue().getThistLevel());
+			System.out.println("|Name : " + pets.getKey() + " \t|Type : " + pets.getValue().getType() + "\t|Play: "
+					+ pets.getValue().getPlayLevel() + "\t|Hunger: " + pets.getValue().getHungerLevel() + "\t|Thirst: "
+					+ pets.getValue().getThistLevel());
 		}
 	}
-	
+
+	public void callTick(VirtualPet adoptablePet) {
+		for (VirtualPet entries : availablePets()) {
+			entries.tick();
+		}
+	}
+
 }

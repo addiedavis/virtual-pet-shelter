@@ -28,15 +28,9 @@
 - methods this class should have 
 	-return a Collection of all the pets in the shelter
 	- return a specific VirtualPet's name
-	- allow intake of a homeless pet (add)
-	- allow adoption of a homeless pet (adopt)
-	- feed all the pets in the shelter 
-	- water all the pets in the shelter
-	- plays with an individual pet
-- include a tick method for each of the pets in the shelter, updating their needs
-
-## VirtualPet class
-
+	- allow intake of a homeless pet 
+	- allow adoption of a homeless pet 
+		- eventually go back and throw a "Sorry couldn't find pet" if an invalid name is typed in.
 - variables
 	- name
 	- description
